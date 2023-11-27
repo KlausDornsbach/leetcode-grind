@@ -12,7 +12,6 @@ class Solution(object):
             if matrix[i][0] <= target <= matrix[i][-1]:
                 l = 0
                 r = len(matrix[0]) - 1
-                already_tried = False
                 while l <= r:
                     already_tried = True
                     j = (l + r)//2
@@ -23,8 +22,7 @@ class Solution(object):
                     else:
                         r = j-1
 
-                if already_tried:
-                    return False
+                return False
             
             if matrix[i][0] > target:
                 b = i-1
